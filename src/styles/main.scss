@@ -3,3 +3,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
 // can add Boostrap overrides, additional Sass/CSS below...
+
+.timeline-card > div:hover {
+	background-color: rgba(160,200,220,.12);
+}
+.timeline-thumbnail {
+	width: 64px;
+	height: 64px;
+}
