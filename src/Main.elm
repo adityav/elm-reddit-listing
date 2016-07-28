@@ -26,8 +26,8 @@ import AppPorts
 
 -- APP
 main =
-  TimeTravel.program 
-  --App.program
+  --TimeTravel.program 
+  App.program
   { view = view
   , update = update
   , init = init

@@ -20,6 +20,7 @@ import AppPorts exposing (fetchJsonP)
 --loadRedditLink = Http.get decodeNews "http://reddit.com/r/elm/new.json?raw_json=1"
 --loadRedditLink = Http.get decodeNews "http://localhost:3000/reddit_resp"
 
+--loadRedditLinks  = fetchJsonP "http://reddit.com/r/elm/new.json"
 loadRedditLinks  = fetchJsonP "http://reddit.com/r/elm/new.json?raw_json=1"
 loadMoreRedditLinks after = fetchJsonP <| "http://reddit.com/r/elm/new.json?raw_json=1?after=" ++ after 
 

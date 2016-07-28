@@ -1,6 +1,7 @@
 // pull in desired CSS/SASS files
 require( './styles/main.scss' );
 var jsonp = require('jsonp');
+var Elm = require( './Main' );
 
 function isElementInViewport (el) {
     //special bonus for those using jQuery
@@ -20,7 +21,6 @@ function isElementInViewport (el) {
 
 
 // inject bundled Elm app into div#main
-var Elm = require( './Main' );
 var app = Elm.Main.embed( document.getElementById( 'main' ) );
 
 //
