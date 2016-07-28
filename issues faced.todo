@@ -3,9 +3,3 @@ Issues faced while developing an Elm app
 elm html is dificult for designers. need to have the HTML template outside of elm
 
 a simple beahaviour like click on a link to open a new url is impossible. As window.open isn't available anywhere
-
-
-
-github
-elm-lang
-get a list of all repos

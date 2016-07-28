@@ -21,6 +21,7 @@ keyedDiv = HtmlK.node "div"
 
 -- VIEW
 
+-- Top level view
 view : Model -> Html Msg
 view model =
   div []
@@ -40,11 +41,13 @@ headerTmpl model =
     ]
   ]
 
+-- reddit listing. We use keyedDiv to optimize add/removals
 bodyTmpl : Model -> Html Msg
 bodyTmpl model =
   keyedDiv [ id "reddit-listing", class "container" ] 
     (List.map (\data -> (data.id, RedditWidget.view data)) model.redditListing.data)
 
+-- loading div when more data is being loaded
 loadingTmpl : Bool -> Html Msg
 loadingTmpl isLoading =
   if isLoading then
@@ -53,6 +56,7 @@ loadingTmpl isLoading =
     ]
   else span [] []
 
+-- footer. never to be seen :{}
 footerTmpl : Model -> Html Msg
 footerTmpl model =
   div [ class "container", style styles.header ]

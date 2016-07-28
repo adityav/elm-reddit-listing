@@ -1,12 +1,12 @@
 {
-  "name": "elm-webpack-starter",
-  "description": "Webpack setup for writing Elm apps",
-  "version": "0.6.2",
+  "name": "elm-reddit-listing",
+  "description": "Simple listing for reddit",
+  "version": "0.0.1",
   "license": "MIT",
-  "author": "Peter Morawiec",
+  "author": "adityav",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moarwick/elm-webpack-starter"
+    "url": "https://github.com/adityav/elm-reddit-listing"
   },
   "scripts": {
     "start": "webpack-dev-server --hot --inline --content-base src/",
@@ -35,8 +35,6 @@
     "webpack-merge": "^0.13.0"
   },
   "dependencies": {
-    "express": "^4.14.0",
-    "http-proxy": "^1.14.0",
-    "request": "^2.74.0"
+    "http-proxy": "^1.14.0"
   }
 }

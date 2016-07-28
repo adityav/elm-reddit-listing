@@ -8,8 +8,9 @@ import Models exposing (..)
 -- MSG
 type Msg 
   = Noop 
+  -- reddit fetching msgs
   | FetchStarted String
   | RedditFetchSucceed RedditListing
   | RedditFetchFail Http.Error
-
+  -- scrolling msgs
   | LastItemVisible Bool

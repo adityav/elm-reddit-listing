@@ -54,7 +54,7 @@ update msg model =
     RedditFetchSucceed redditData ->
 
       { model |
-        redditListing = appendListing model.redditListing redditData,
+        redditListing = mergeListing model.redditListing redditData,
         isLoading = False } ! [ AppPorts.isLastElemVisible "reddit-listing" ]
 
     RedditFetchFail err ->

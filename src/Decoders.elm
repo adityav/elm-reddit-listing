@@ -6,9 +6,8 @@ import Date
 import Models exposing (..)
 
 {-
-   Decoders of reddit json value
-   I think it is better to use
-    package elm-json-extra for this 
+   Decoders of reddit json value.
+   I think it is better to use package elm-json-extra for this 
 -}
 
 decodeRedditLink : Decoder RedditLink
@@ -20,6 +19,7 @@ decodeRedditLink =
         ("num_comments" := int)
         ("permalink" := string)
         ("score" := int)
+        -- empty strings for thumbnails are converted to None
         (map (\val -> if val == "" then Nothing else Just val) ("thumbnail" := string))
         ("title" := string)
     `andThen`

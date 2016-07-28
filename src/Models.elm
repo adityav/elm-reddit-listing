@@ -33,8 +33,9 @@ type alias RedditListing =
 
 emptyListing = RedditListing [] "" ""
 
-appendListing : RedditListing -> RedditListing -> RedditListing
-appendListing listing newListing =
+
+mergeListing : RedditListing -> RedditListing -> RedditListing
+mergeListing listing newListing =
     { listing |
         data = (listing.data ++ newListing.data),
         after = newListing.after

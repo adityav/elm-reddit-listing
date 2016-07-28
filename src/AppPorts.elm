@@ -6,8 +6,9 @@ import Json.Encode exposing (Value)
 port lastItemVisible : (Bool -> msg) -> Sub msg
 -- start listening to last child of the dom with given Id
 port isLastElemVisible : String -> Cmd msg
--- json P 
 
+
+-- jsonP
 port fetchJsonP : String -> Cmd msg
 
 port fetchJsonPSucceed : (Value -> msg) -> Sub msg

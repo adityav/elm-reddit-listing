@@ -26,7 +26,6 @@ var app = Elm.Main.embed( document.getElementById( 'main' ) );
 //
 // jsonp integration
 //
-
 app.ports.fetchJsonP.subscribe(function(url) {
     jsonp(url, {
         param : 'jsonp'
@@ -38,6 +37,9 @@ app.ports.fetchJsonP.subscribe(function(url) {
     });
 });
 
+///
+/// Check for last element visiblity
+///
 app.ports.isLastElemVisible.subscribe(function(divId) {
     console.log("Setting up listener for last item with Id:", divId);
     // scroll stop
