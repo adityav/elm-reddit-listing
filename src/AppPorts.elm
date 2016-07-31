@@ -1,6 +1,6 @@
 port module AppPorts exposing (..)
 
-import Json.Encode exposing (Value)
+import Json.Decode exposing (..)
 
 -- listen to scroll events
 port lastItemVisible : (Bool -> msg) -> Sub msg

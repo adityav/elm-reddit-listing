@@ -26,8 +26,8 @@ import AppPorts
 
 -- APP
 main =
-  --TimeTravel.program 
-  App.program
+  TimeTravel.program 
+  --App.program
   { view = view
   , update = update
   , init = init
@@ -75,9 +75,10 @@ update msg model =
 subscriptions : Model -> Sub Msg
 subscriptions model =
   Sub.batch
-  [ AppPorts.lastItemVisible LastItemVisible,
-    -- process jsonp Succeed messages.
-    -- here we are decoding the data and if it fails, returning an empty list
+  [ 
+     AppPorts.lastItemVisible LastItemVisible,
+     --process jsonp Succeed messages.
+     --here we are decoding the data and if it fails, returning an empty list
     AppPorts.fetchJsonPSucceed 
     <| decodeValue Decoders.decodeNews
     >> Result.map RedditFetchSucceed

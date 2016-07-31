@@ -8,7 +8,7 @@ import String
 import Date
 import Task exposing (Task)
 import Date.Format
-import Models exposing (RedditLink)
+import Models exposing (RedditLink, RedditListing)
 import Decoders exposing (decodeNews)
 
 import AppPorts exposing (fetchJsonP)
@@ -19,6 +19,8 @@ import AppPorts exposing (fetchJsonP)
 --loadRedditLink = Http.get decodeNews "http://localhost:8000/r/elm/new.json?raw_json=1"
 --loadRedditLink = Http.get decodeNews "http://reddit.com/r/elm/new.json?raw_json=1"
 --loadRedditLink = Http.get decodeNews "http://localhost:3000/reddit_resp"
+--loadLocally : Task Http.Error RedditListing
+--loadLocally = Http.get decodeNews "http://localhost:3000/problem_data"
 
 --loadRedditLinks  = fetchJsonP "http://reddit.com/r/elm/new.json"
 loadRedditLinks  = fetchJsonP "http://reddit.com/r/elm/new.json?raw_json=1"

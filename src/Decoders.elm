@@ -27,7 +27,7 @@ decodeRedditLink =
             ("url" := string)
             (map Date.fromTime ("created_utc" := float))
             ("id" := string)
-    ) 
+    )
 
 {-
     API response decoder. returns a listing
