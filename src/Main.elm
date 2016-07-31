@@ -38,7 +38,7 @@ main =
 -- INIT
 init : (Model, Cmd Msg)
 init =
-    (Model emptyListing Nothing True, RedditWidget.loadRedditLinks)
+    (Model emptyListing Nothing True "", RedditWidget.loadRedditLinks)
 
 -- UPDATE
 
@@ -68,6 +68,9 @@ update msg model =
         ({ model | isLoading = True }, RedditWidget.loadMoreRedditLinks model.redditListing.after)
       else 
         (model, Cmd.none)
+
+    SetFilter filterStr ->
+      { model | filterString = filterStr } ! []
 
 
 

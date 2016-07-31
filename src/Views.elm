@@ -4,7 +4,8 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Keyed as HtmlK
 import Html.App as App
-import Html.Events exposing ( onClick )
+import Html.Events exposing ( onClick, onInput )
+import String
 
 
 -- components
@@ -44,8 +45,23 @@ headerTmpl model =
 -- reddit listing. We use keyedDiv to optimize add/removals
 bodyTmpl : Model -> Html Msg
 bodyTmpl model =
-  keyedDiv [ id "reddit-listing", class "container" ] 
-    (List.map (\data -> (data.id, RedditWidget.view data)) model.redditListing.data)
+  div [ class "container" ][
+    searchBoxTmpl model,
+    keyedDiv [ id "reddit-listing", class "container" ] 
+      (List.map (\data -> (data.id, RedditWidget.view data)) <| filterListing model.filterString model.redditListing.data)
+  ]
+
+filterListing filterString listing = 
+  List.filter (\data -> String.contains filterString data.title) listing
+
+
+searchBoxTmpl : Model -> Html Msg
+searchBoxTmpl model =
+  div [ class "form-group"][
+    label [ for "search-box" ] [ text "search text" ],
+    input [ id "search-box", class "form-control", placeholder "enter search text to filter data", onInput SetFilter] [
+    ]
+  ]
 
 -- loading div when more data is being loaded
 loadingTmpl : Bool -> Html Msg

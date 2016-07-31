@@ -7,6 +7,7 @@ type alias Model =
   { redditListing : RedditListing
   , fetchError : Maybe Http.Error
   , isLoading : Bool
+  , filterString : String
   }
 
 -- Reddit link data

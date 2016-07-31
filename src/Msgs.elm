@@ -14,3 +14,4 @@ type Msg
   | RedditFetchFail Http.Error
   -- scrolling msgs
   | LastItemVisible Bool
+  | SetFilter String
